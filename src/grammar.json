@@ -1,0 +1,64 @@
+{
+  "name": "angular_content",
+  "rules": {
+    "content": {
+      "type": "REPEAT",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "interpolation"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "text"
+            },
+            "named": false,
+            "value": "text"
+          }
+        ]
+      }
+    },
+    "interpolation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_interpolation_content"
+        },
+        {
+          "type": "STRING",
+          "value": "}}"
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "_interpolation_content"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "text"
+    }
+  ],
+  "inline": [],
+  "supertypes": []
+}
+
